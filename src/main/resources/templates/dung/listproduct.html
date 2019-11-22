@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>Danh sach san pham</h1>
+<div th:each="l : ${list}">
+    <h2 th:utext="${l.getNameProduct()}"></h2>
+    <button><a th:href="@{/user/viewdetail/{id}(id=${l.getId()})}"> view detail</a> </button>
+</div>
+</body>
+</html>

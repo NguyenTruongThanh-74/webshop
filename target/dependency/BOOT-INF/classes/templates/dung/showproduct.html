@@ -1,0 +1,43 @@
+
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div th:object="${list}">
+    <table>
+        <tr>
+            <th>id</th>
+            <th>name</th>
+            <th>price</th>
+            <th>describe</th>
+            <th>image</th>
+        </tr>
+        <tr th:each = "l : ${list}">
+            <td th:utext="${l.getId()}"></td>
+            <td th:utext="${l.getNameProduct()}"></td>
+            <td th:utext="${l.getPriceProduct()}"></td>
+            <td th:utext="${l.getDescribeProduct()}"></td>
+            <td><img th:src="@{/upload/{image}(image = ${l.imagePath})}" width="100px" height="100px"></td>
+            <td>
+                <ul aria-labelledby="dropdownMenu1">
+
+                    <li>
+                        <th>number of product</th>
+                        <input type="number" object="${numberproduct}" method="post" > <input type="submit" value="save"> </td>
+
+                    </li>
+
+                </ul>
+            </td>
+        </tr>
+
+    </table>
+
+
+</div>
+<h2 th:utext="'tong tien da mua   ' + ${p}"></h2>
+</body>
+</html>
